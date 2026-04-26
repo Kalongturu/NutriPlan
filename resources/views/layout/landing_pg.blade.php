@@ -34,23 +34,23 @@
                     <ul class="navbar-nav mb-xl-0 align-items-center mb-3">
                         <li class="nav-item">
                             <a class="me-xl-2 btn text-center nav-link ijo rounded-pill text-white fw-bold item"
-                                aria-current="page" data-nutri="Index" href="#">Home</a>
+                                aria-current="page" data-nutri="Index" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="mx-xl-2 btn text-center nav-link oren rounded-pill text-white fw-bold item"
-                                href="#">How It Works</a>
+                                href="#how-it-works">How It Works</a>
                         </li>
                         <li class="nav-item">
                             <a class="mx-xl-2 btn text-center nav-link ijo rounded-pill text-white fw-bold item"
-                                href="#">Recipes</a>
+                                href="#recipes">Recipes</a>
                         </li>
                         <li class="nav-item">
                             <a class="mx-xl-2 btn text-center nav-link oren rounded-pill text-white fw-bold item"
-                                href="#">Callculator</a>
+                                href="#calculator">Calculator</a>
                         </li>
                         <li class="nav-item">
                             <a class="mx-xl-2 btn text-center nav-link ijo rounded-pill text-white fw-bold item"
-                                href="#">Planner</a>
+                                href="#planner">Planner</a>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +67,7 @@
     </nav>
     <main>
         <!-- Isi konten -->
-        <div class="container-fluid min-vh-100 lat-blkg px-4 konten" width="100%">
+        <div class="container-fluid min-vh-100 lat-blkg px-4 konten" id="home" width="100%">
             <!-- Page 1 -->
             <div class="row min-vh-100 align-items-center mb-5">
                 <!-- Paragraf -->
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <!-- Page 2 -->
-            <div class="row min-vh-100">
+            <div class="row min-vh-100" id="how-it-works">
                 <div class="container col-12">
                     <h1 class="pg2-h1 fw-bold">How NutriPlan Works</h1>
                     <h2 class="text-center">From body data to personalized meals - everything is designed to help you
@@ -210,7 +210,7 @@
 
             </div>
             <!-- Page 3 -->
-            <div class="row min-vh-100 mb-5">
+            <div class="row min-vh-100 mb-5" id="recipes">
                 <div class="container col-12 px-5">
                     <h1 class="pg3-h1 fw-bold">Explore Healthy Recipes</h1>
                     <h2 class="pg3-h2">Discover nutritions and delicious recipes tailored to your lifestyle. From quick
@@ -272,7 +272,7 @@
                 </div>
             </div>
             <!-- Page 4 -->
-            <div class="row min-vh-100 prg-1">
+            <div class="row min-vh-100" id="calculator">
                 <div class="col-lg-7 col-6">
                     <div class="col-lg-10 col-12">
                         <h1 class="pg3-h1 text-start fw-bold">Calculate Your Health Need</h1>
@@ -328,8 +328,8 @@
                 </div>
             </div>
             <!-- Page 5 -->
-            <div class="row min-vh-100">
-                <div class="col-6 d-flex flex-wrap justify-content-center">
+            <div class="row min-vh-100" id="planner">
+                <div class="col-6 d-flex justify-content-center">
                     {{-- Panel Page 5 --}}
                     <div class="card-4 d-flex flex-column px-4 py-3">
                         <div class="d-flex align-items-start mb-2">
@@ -389,16 +389,71 @@
                                 <p class="p-card3 m-0">Mar 15 - Mar 21</p>
                             </div>
                         </div>
-                        <div class="mt-3 border p-0 d-flex">
-                            <div class="checklist m-0 me-3 align-items-start"></div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
                             <div class="d-flex flex-column">
-                                <h6 class="m-0 fw-bold text-white">08.00-08.30</h6>
+                                <h6 class="m-0 fw-bold text-white">08.00-08.10 AM</h6>
                                 <h6 class="m-0 fw-bold text-white">Water Intake</h6>
                             </div>
-
+                        </div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
+                            <div class="d-flex flex-column">
+                                <h6 class="m-0 fw-bold text-white">08.00-08.30 AM</h6>
+                                <h6 class="m-0 fw-bold text-white">Avocado Toast With Poached Egg</h6>
+                                <p class="d-flex justify-content-start pt-2 ps-0 mb-0">
+                                    <span class="text-white me-2 fw-bold ktg-oren">Breakfast</span>
+                                    <span class="text-white me-2 fw-bold ktg-ijo">320 kcal</span>
+                                    <span class="text-white fw-bold ktg-oren">15 mins</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
+                            <div class="d-flex flex-column">
+                                <h6 class="m-0 fw-bold text-white">12.30-01.00 PM</h6>
+                                <h6 class="m-0 fw-bold text-white">Quinoa and Kale Salad with Lemon V...</h6>
+                                <p class="d-flex justify-content-start pt-2 ps-0 mb-0">
+                                    <span class="text-white me-2 fw-bold ktg-oren">Lunch</span>
+                                    <span class="text-white me-2 fw-bold ktg-ijo">450 kcal</span>
+                                    <span class="text-white fw-bold ktg-oren">20 mins</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
+                            <div class="d-flex flex-column">
+                                <h6 class="m-0 fw-bold text-white">01.00-01.10 PM</h6>
+                                <h6 class="m-0 fw-bold text-white">Water Intake</h6>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
+                            <div class="d-flex flex-column">
+                                <h6 class="m-0 fw-bold text-white">04.00-04.30 PM</h6>
+                                <h6 class="m-0 fw-bold text-white">Workout (Strength training)</h6>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
+                            <div class="d-flex flex-column">
+                                <h6 class="m-0 fw-bold text-white">07.00-07.30 PM</h6>
+                                <h6 class="m-0 fw-bold text-white">Avocado Toast with Poached Egg</h6>
+                                <p class="d-flex justify-content-start pt-2 ps-0 mb-0">
+                                    <span class="text-white me-2 fw-bold ktg-oren">Dinner</span>
+                                    <span class="text-white me-2 fw-bold ktg-ijo">320 kcal</span>
+                                    <span class="text-white fw-bold ktg-oren">20 mins</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-0 d-flex">
+                            <div class="checklist me-3 align-items-start"></div>
+                            <div class="d-flex flex-column">
+                                <h6 class="m-0 fw-bold text-white">07.00-07.10 PM</h6>
+                                <h6 class="m-0 fw-bold text-white">Water Intake</h6>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-6">
                     <h1 class="pg3-h1 text-end fw-bold">Stay On Track With Your Meals</h1>

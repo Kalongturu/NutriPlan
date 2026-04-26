@@ -179,6 +179,15 @@ h2 {
     height: 1rem;
     border-radius: 6px;
     border: 1px solid #000;
+    position: relative;
+}
+.checklist::after {
+    content: "";
+    background: #000;
+    height: 20px;
+    width: 20px;
+    top: 0;
+    left: 0;
 }
 .tgl-day1 {
     border-radius: 4px;
@@ -232,10 +241,13 @@ h2 {
 }
 .card-4 {
     width: 20rem;
-    height: 30rem;
+    min-height: 35rem;
     background: rgba(139, 136, 136, 1);
     border-radius: 10px;
     z-index: 1;
+}
+#planner {
+    padding-bottom: 5rem;
 }
 .pnl-pg5 {
     background: white;
