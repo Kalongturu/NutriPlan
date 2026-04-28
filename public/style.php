@@ -609,19 +609,32 @@ echo "body { background-color: #f0f0f0; }";
         text-overflow: ellipsis;
     }
 
-    .wrapper-home {
+    .wrapper-meal-home {
         background: rgba(255, 255, 255, 0.60);
         min-width: 5rem;
-        min-height: 20rem;
+        min-height: 90vh;
         border-radius: 24px;
         border: 0.8px solid rgba(255, 237, 212, 0.60);
+        overflow-y: auto;
+    }
+
+    .wrapper-daily-home {
+        width: 18rem;
+        height: 23rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        background: #FFD8DF;
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
+        backdrop-filter: blur(17.5px);
     }
 
     .wrapper-home1 {
         border-radius: 10px;
         background: #FFF;
         box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
-        min-height: 80vh;
+        min-height: 90vh;
+        height: auto;
         min-width: 7rem;
     }
 
@@ -630,18 +643,20 @@ echo "body { background-color: #f0f0f0; }";
         background: rgba(255, 216, 223, 0.23);
         box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
         backdrop-filter: blur(17.5px);
-        width: 15rem;
-        height: 20rem;
+        width: 18rem;
+        height: 23rem;
         margin-bottom: 1rem;
+        padding: 1rem;
     }
 
     .wrapper-activity-home {
+        padding: 1rem;
         border-radius: 16px;
         background: #FFF;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
         backdrop-filter: blur(17.5px);
-        width: 15rem;
-        height: 20rem;
+        width: 18rem;
+        height: 23rem;
         margin-bottom: 1rem;
     }
 
