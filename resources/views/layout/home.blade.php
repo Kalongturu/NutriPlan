@@ -2,8 +2,9 @@
 
 {{-- Section homepage --}}
 
+@section('title', 'Homepage')
 @section('content')
-    <div class="col-9 border">
+    <div class="col-10 border">
         <div class="row py-0">
             <div class="col-4">
                 <h5 class="fw-bold">Selamat datang, {{ session('user_name') }}</h5>
@@ -25,18 +26,32 @@
                     <input type="text" class="form-control" aria-label="search bar home"
                         aria-describedby="form di homepage" placeholder="Search by recipes and more">
                 </div>
+
             </div>
-            <div class="col-4 border">
+            <div class="col-5 border">
                 <div class="wrapper-home">
 
                 </div>
             </div>
-            <div class="col-8 border">
+            <div class="col-7 d-flex justify-content-evenly flex-wrap">
+                <div class="wrapper-report-home">
 
+                </div>
+                <div class="wrapper-report-home">
+
+                </div>
+                <div class="wrapper-report-home">
+
+                </div>
+                <div class="wrapper-activity-home">
+
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-3 border">
+    <div class="col-2 pb-5 border">
+        <div class="wrapper-home1">
 
+        </div>
     </div>
 @endsection

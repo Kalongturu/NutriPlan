@@ -47,7 +47,7 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .row {
-        padding-top: 5rem;
+        padding: 5rem 0;
     }
 
     .navbar-nav {
@@ -602,7 +602,7 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .info-user {
-        display: inline-block;
+        height: max-content;
         width: 100px;
         white-space: nowrap;
         overflow: hidden;
@@ -615,6 +615,34 @@ echo "body { background-color: #f0f0f0; }";
         min-height: 20rem;
         border-radius: 24px;
         border: 0.8px solid rgba(255, 237, 212, 0.60);
+    }
+
+    .wrapper-home1 {
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        min-height: 80vh;
+        min-width: 7rem;
+    }
+
+    .wrapper-report-home {
+        border-radius: 10px;
+        background: rgba(255, 216, 223, 0.23);
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
+        backdrop-filter: blur(17.5px);
+        width: 15rem;
+        height: 20rem;
+        margin-bottom: 1rem;
+    }
+
+    .wrapper-activity-home {
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(17.5px);
+        width: 15rem;
+        height: 20rem;
+        margin-bottom: 1rem;
     }
 
     .tgl {

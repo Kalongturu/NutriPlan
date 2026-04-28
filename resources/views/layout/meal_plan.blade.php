@@ -2,6 +2,7 @@
 
 {{-- Section meal plan --}}
 
+@section('title', 'Meal Plan')
 @section('content')
     <div class="col-9 border">
         <div class="row py-0">
