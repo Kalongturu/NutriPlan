@@ -5,11 +5,15 @@
 @section('content')
     <div class="col-9 border">
         <div class="row py-0">
-            <div class="col-4 border">
+            <div class="col-4">
                 <h5 class="fw-bold">Selamat datang, {{ session('user_name') }}</h5>
-                <p>You have activity ...</p>
+                <p class="tgl">Let's set up your meal plan with NutriPlan.</p>
+                <h4 class="mb-1 fw-500">Meal plan - Today</h4>
+                <p class="text-muted tgl">{{ date('l, d F Y') }}</p>
+
             </div>
-            <div class="col-8 border">
+
+            <div class="col-8">
                 <div class="position-relative">
                     <span id="input-group-sizing-sm"></span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -22,10 +26,17 @@
                         aria-describedby="form di homepage" placeholder="Search by recipes and more">
                 </div>
             </div>
+            <div class="col-4 border">
+                <div class="wrapper-home">
+
+                </div>
+            </div>
+            <div class="col-8 border">
+
+            </div>
         </div>
     </div>
-    <div class="col-3 border-5 border">
+    <div class="col-3 border">
 
     </div>
-    <a href="/logout">Logout</a>
 @endsection

@@ -33,7 +33,7 @@
                     <ul class="navbar-nav mb-xl-0 align-items-center mb-3">
                         <li class="nav-item">
                             <a class="me-xl-2 btn align-items-center d-flex nav-link ijo rounded-pill text-white fw-bold item"
-                                data-nutri="Index" href="#">
+                                data-nutri="Index" href="/">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none">
                                         <path
@@ -45,7 +45,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="me-xl-2 btn align-items-center d-flex nav-link oren rounded-pill text-white fw-bold item"
-                                data-nutri="Index" href="#">
+                                data-nutri="Index" href="/meal_plan">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none">
                                         <path
@@ -119,8 +119,8 @@
                 </div>
                 <div class="d-flex justify-content-center flex-grow-0">
                     <ul class="navbar-nav align-items-center mb-xl-0">
-                        <li class="nav-item item d-flex">
-                            <a class="btn text-center nav-link oren-bunder me-2 p-1" href="#">
+                        <li class="nav-item border item d-flex">
+                            <a class="btn text-center nav-link oren-bunder me-2 p-1 flex-grow-0" href="#">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                         viewBox="0 0 20 20" fill="none">
                                         <path
@@ -128,7 +128,7 @@
                                             fill="white" />
                                     </svg></span>
                             </a>
-                            <a href="#" class="btn text-center nav-link ijo-bunder p-1 me-2">
+                            <a href="#" class="btn text-center nav-link ijo-bunder p-1 flex-grow-0 me-2">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
                                         viewBox="0 0 23 23" fill="none">
@@ -141,9 +141,15 @@
                                     </svg>
                                 </span>
                             </a>
-                            <a class="btn text-center nav-link oren-bunder me-2 py-1 px-3" href="#"></a>
+                            <a class="btn text-center nav-link oren-bunder me-2 py-1 px-3 flex-grow-0"
+                                href="#"></a>
                         </li>
+
                     </ul>
+                    <div class="info-user border">
+                        <p class="mb-0">halo</p>
+                        <p class="mb-0">halo@gmail.com</p>
+                    </div>
                 </div>
             </div>
         </div>

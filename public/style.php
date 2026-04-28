@@ -574,8 +574,50 @@ echo "body { background-color: #f0f0f0; }";
         outline: none;
     }
 
+    .btn-check:checked+.bg-radio {
+        background-color: #FFF;
+        color: #79716B;
+        box-shadow: 0 0 0 2px #F5F5F4 inset;
+    }
+
+    .btn-kalender {
+        background-color: #F5F5F4;
+        border-radius: 26843500px;
+        padding: 0.125rem 0.25rem;
+        display: inline-block;
+        color: #79716B;
+    }
+
+    .bg-radio {
+        border-radius: 26843500px;
+        color: #292524;
+        padding: 0.5rem 2rem;
+        transition: all 0.4s ease;
+        font-size: 0.8rem;
+    }
+
     .lup {
         top: 5px;
         left: 5px;
+    }
+
+    .info-user {
+        display: inline-block;
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .wrapper-home {
+        background: rgba(255, 255, 255, 0.60);
+        min-width: 5rem;
+        min-height: 20rem;
+        border-radius: 24px;
+        border: 0.8px solid rgba(255, 237, 212, 0.60);
+    }
+
+    .tgl {
+        font-size: 0.8rem;
     }
 </style>

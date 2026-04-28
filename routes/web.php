@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('layout.home');
 });
 
+Route::get('/meal_plan', function () {
+    return view('layout.meal_plan');
+});
+
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
