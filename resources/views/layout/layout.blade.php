@@ -58,7 +58,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="me-xl-2 btn align-items-center d-flex nav-link ijo rounded-pill text-white fw-bold item"
-                                data-nutri="Index" href="#">
+                                data-nutri="Index" href="/nutrition">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none">
                                         <path
@@ -76,7 +76,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="me-xl-2 btn align-items-center d-flex nav-link oren rounded-pill text-white fw-bold item"
-                                data-nutri="Index" href="#">
+                                data-nutri="Index" href="/recipes">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 31 31" fill="none">
                                         <path
@@ -94,7 +94,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="me-xl-2 btn align-items-center d-flex nav-link ijo rounded-pill text-white fw-bold item"
-                                data-nutri="Index" href="#">
+                                data-nutri="Index" href="/analytic">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none">
                                         <g clip-path="url(#clip0_102_1720)">

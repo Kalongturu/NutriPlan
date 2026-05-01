@@ -11,6 +11,18 @@ Route::get('/meal_plan', function () {
     return view('layout.meal_plan');
 });
 
+Route::get('/analytic', function () {
+    return view('layout.analytic');
+});
+
+Route::get('/nutrition', function () {
+    return view('layout.nutrition');
+});
+
+Route::get('/recipes', function () {
+    return view('layout.recipes');
+});
+
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');

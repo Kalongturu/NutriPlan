@@ -281,8 +281,8 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .card-6 {
-        width: 7rem;
-        height: 7rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 10px;
         background: #FFF;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.10), 0 2px 4px -2px rgba(0, 0, 0, 0.10);
@@ -427,10 +427,24 @@ echo "body { background-color: #f0f0f0; }";
         border-radius: 5px;
     }
 
+    .ktg-ijo-home {
+        background: #95cd41;
+        font-size: 0.5rem;
+        padding: 0 0.5rem;
+        border-radius: 5px;
+    }
+
     .ktg-oren {
         background: #ea5c2b;
-        font-size: 0.625rem;
         padding: 0 0.5rem;
+        font-size: 0.625rem;
+        border-radius: 5px;
+    }
+
+    .ktg-oren-home {
+        background: #ea5c2b;
+        padding: 0 0.5rem;
+        font-size: 0.5rem;
         border-radius: 5px;
     }
 
@@ -629,8 +643,8 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .wrapper-daily-home {
-        width: 18rem;
-        height: 23rem;
+        width: 16rem;
+        height: 20rem;
         margin-bottom: 1rem;
         padding: 1rem;
         border-radius: 10px;
@@ -653,8 +667,8 @@ echo "body { background-color: #f0f0f0; }";
         background: rgba(252, 252, 252, 0.23);
         box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
         backdrop-filter: blur(5px);
-        width: 18rem;
-        height: 23rem;
+        width: 16rem;
+        height: 20rem;
         margin-bottom: 1rem;
         padding: 1rem;
     }
@@ -664,15 +678,17 @@ echo "body { background-color: #f0f0f0; }";
         border: 0.8px solid #F5F5F4;
         background: #FFF;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
-        width: 12rem;
+        width: 17.5rem;
         height: 7rem;
-        margin-bottom: 1rem;
+        margin-left: auto;
     }
 
     .meals-list {
-        flex: 1;
         overflow-y: auto;
         height: calc(100% - 2rem);
+        display: flex;
+        flex-direction: column;
+
     }
 
     .meals-list::-webkit-scrollbar {
@@ -683,6 +699,11 @@ echo "body { background-color: #f0f0f0; }";
         position: sticky;
         top: 0;
         z-index: 10;
+    }
+
+    .type-meal {
+        font-size: 0.8rem;
+        color: #EA5C2B;
     }
 
     .p-water {
@@ -708,6 +729,10 @@ echo "body { background-color: #f0f0f0; }";
         height: 4rem;
         background-color: rgba(74, 85, 101, 0.2);
         border-radius: 10px;
+    }
+
+    .font-size-s {
+        font-size: 0.55rem;
     }
 
     .tgl {
