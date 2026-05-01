@@ -5,6 +5,11 @@ echo "body { background-color: #f0f0f0; }";
 <style>
     /* Font style */
 
+    :root {
+        --warna-ijo: #95cd41;
+        --warna-oren: #ea5c2b;
+    }
+
     @font-face {
         font-family: "SF Pro Display";
         src: url("fonts/SFProDisplay-Regular.ttf") format("truetype");
@@ -67,7 +72,7 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .ijo {
-        background-color: #95cd41;
+        background-color: var(--warna-ijo);
         transition: all 0.3s ease;
     }
 
@@ -76,7 +81,7 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .ijo-bunder {
-        background-color: #95cd41;
+        background-color: var(--warna-ijo);
         transition: all 0.3s ease;
         border-radius: 100%;
     }
@@ -403,7 +408,7 @@ echo "body { background-color: #f0f0f0; }";
 
     .Num-ijo {
         font-weight: 700;
-        background: #95cd41;
+        background: var(--warna-ijo);
         padding: 0 0.5rem;
         border-radius: 200px;
     }
@@ -421,14 +426,14 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .ktg-ijo {
-        background: #95cd41;
+        background: var(--warna-ijo);
         font-size: 0.625rem;
         padding: 0 0.5rem;
         border-radius: 5px;
     }
 
     .ktg-ijo-home {
-        background: #95cd41;
+        background: var(--warna-ijo);
         font-size: 0.5rem;
         padding: 0 0.5rem;
         border-radius: 5px;
@@ -726,7 +731,7 @@ echo "body { background-color: #f0f0f0; }";
 
     .water-container {
         width: 100%;
-        height: 4rem;
+        height: 3.2rem;
         background-color: rgba(74, 85, 101, 0.2);
         border-radius: 10px;
     }
