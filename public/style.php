@@ -280,6 +280,15 @@ echo "body { background-color: #f0f0f0; }";
         border-radius: 10px;
     }
 
+    .card-6 {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.10), 0 2px 4px -2px rgba(0, 0, 0, 0.10);
+        margin: 0.5rem;
+    }
+
     .card-1 {
         width: 18rem;
         min-height: 12rem;
@@ -612,10 +621,11 @@ echo "body { background-color: #f0f0f0; }";
     .wrapper-meal-home {
         background: rgba(255, 255, 255, 0.60);
         min-width: 5rem;
-        min-height: 90vh;
+        height: 80vh;
         border-radius: 24px;
         border: 0.8px solid rgba(255, 237, 212, 0.60);
-        overflow-y: auto;
+        padding: 1rem;
+        overflow: hidden;
     }
 
     .wrapper-daily-home {
@@ -624,9 +634,9 @@ echo "body { background-color: #f0f0f0; }";
         margin-bottom: 1rem;
         padding: 1rem;
         border-radius: 10px;
-        background: #FFD8DF;
-        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
-        backdrop-filter: blur(17.5px);
+        background: rgba(252, 252, 252, 0.23);
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.25);
+        backdrop-filter: blur(5px);
     }
 
     .wrapper-home1 {
@@ -640,24 +650,64 @@ echo "body { background-color: #f0f0f0; }";
 
     .wrapper-report-home {
         border-radius: 10px;
-        background: rgba(255, 216, 223, 0.23);
+        background: rgba(252, 252, 252, 0.23);
         box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
-        backdrop-filter: blur(17.5px);
+        backdrop-filter: blur(5px);
         width: 18rem;
         height: 23rem;
         margin-bottom: 1rem;
         padding: 1rem;
     }
 
-    .wrapper-activity-home {
-        padding: 1rem;
+    .wrapper-content-meal-home {
         border-radius: 16px;
+        border: 0.8px solid #F5F5F4;
         background: #FFF;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
-        backdrop-filter: blur(17.5px);
-        width: 18rem;
-        height: 23rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
+        width: 12rem;
+        height: 7rem;
         margin-bottom: 1rem;
+    }
+
+    .meals-list {
+        flex: 1;
+        overflow-y: auto;
+        height: calc(100% - 2rem);
+    }
+
+    .meals-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .header-meals {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .p-water {
+        color: #364153;
+        font-family: Inter;
+        font-size: 0.625rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 15px;
+    }
+
+    .p-crd-home {
+        font-size: 0.4rem;
+    }
+
+    .water-content {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .water-container {
+        width: 100%;
+        height: 4rem;
+        background-color: rgba(74, 85, 101, 0.2);
+        border-radius: 10px;
     }
 
     .tgl {

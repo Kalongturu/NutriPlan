@@ -8,7 +8,7 @@
         <div class="row py-0">
             <div class="col-4">
                 <h5 class="fw-bold">Selamat datang, {{ session('user_name') }}</h5>
-                <p class="tgl">Let's set up your meal plan with NutriPlan.</p>
+                <p class="tgl">You have 0 activity today</p>
                 <h4 class="mb-1 fw-500">Meal plan - Today</h4>
                 <p class="text-muted tgl">{{ date('l, d F Y') }}</p>
 
@@ -30,6 +30,18 @@
             </div>
             <div class="col-4 border">
                 <div class="wrapper-meal-home">
+                    <div class="header-meals d-flex">
+                        <h5>Meals & Drinks</h5>
+                    </div>
+                    <div class="meals-list">
+                        @foreach ($meals as $meal)
+                            <img src="{{ $meal->image_url }}" alt="{{ $meal->nama }}" class="meal-img">
+                            <div class="wrapper-content-meal-home px-2 py-1 ms-auto">
+                                test
+                            </div>
+                        @endforeach
+
+                    </div>
 
                 </div>
             </div>
@@ -60,6 +72,42 @@
                         <h6 class="fw-bold mb-0 mx-2">Reports</h6>
                         <p class="tgl m-0">Goal this week</p>
                     </div>
+                    <div class="d-flex flex-wrap">
+                        <div class="card-6 water-intake d-flex p-0">
+                            <div class="water-content px-1 py-2 border">
+                                <div class="p-0 d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                        viewBox="0 0 12 12" fill="none">
+                                        <g clip-path="url(#clip0_222_514)">
+                                            <path
+                                                d="M3.5 8.14999C4.6 8.14999 5.5 7.23499 5.5 6.12499C5.5 5.54499 5.215 4.99499 4.645 4.52999C4.075 4.06499 3.645 3.37499 3.5 2.64999C3.355 3.37499 2.93 4.06999 2.355 4.52999C1.78 4.98999 1.5 5.54999 1.5 6.12499C1.5 7.23499 2.4 8.14999 3.5 8.14999Z"
+                                                stroke="#2B7FFF" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M6.28004 3.29999C6.62392 2.75056 6.86769 2.14452 7.00004 1.50999C7.25004 2.75999 8.00004 3.95999 9.00004 4.75999C10 5.55999 10.5 6.50999 10.5 7.50999C10.5029 8.20114 10.3005 8.87757 9.91844 9.45354C9.5364 10.0295 8.99195 10.4791 8.35411 10.7452C7.71627 11.0114 7.01375 11.0822 6.33563 10.9486C5.65751 10.8151 5.03431 10.4832 4.54504 9.99499"
+                                                stroke="#2B7FFF" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_222_514">
+                                                <rect width="12" height="12" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                    <p class="p-water m-0">Water</p>
+                                    <div class="d-flex align-items-center ms-auto">
+                                        <p class="p-crd-home mb-0">Daily Week</p>
+                                    </div>
+                                </div>
+                                <div class="water-container position-relative">
+                                    <div class="water-slide position-absolute">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-6"></div>
+                        <div class="card-6"></div>
+                        <div class="card-6"></div>
+                    </div>
                 </div>
                 <div class="wrapper-report-home">
                     <div class="d-flex align-items-center">
@@ -88,7 +136,7 @@
                         <h6 class="fw-bold mb-0 mx-2">Daily Intake</h6>
                     </div>
                 </div>
-                <div class="wrapper-activity-home">
+                <div class="wrapper-daily-home">
                     <div class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
