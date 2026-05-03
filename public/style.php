@@ -640,7 +640,7 @@ echo "body { background-color: #f0f0f0; }";
 
     .wrapper-meal-home {
         min-width: 5rem;
-        height: 100%;
+        height: 80vh;
         padding: 1rem;
         overflow: hidden;
         border-radius: 24px;
@@ -697,19 +697,20 @@ echo "body { background-color: #f0f0f0; }";
         overflow: hidden;
         background: none;
         margin: 0;
-        height: calc(100% - 1rem);
+        height: calc(100% - 2rem);
     }
 
     .wrapper-daily-list-home {
         overflow: hidden;
         background: none;
-        height: calc(100% - 1rem);
+        height: calc(100% - 2rem);
     }
 
     .daily-list {
         overflow-y: auto;
         display: flex;
         flex-direction: column;
+        height: calc(100% - 1rem);
     }
 
     .daily-list::-webkit-scrollbar {
@@ -730,6 +731,7 @@ echo "body { background-color: #f0f0f0; }";
         overflow-y: auto;
         display: flex;
         flex-direction: column;
+        height: calc(100% - 2rem);
     }
 
     .meals-list::-webkit-scrollbar {
@@ -741,8 +743,6 @@ echo "body { background-color: #f0f0f0; }";
         top: 0;
         z-index: 10;
     }
-
-
 
     .type-meal {
         font-size: 0.8rem;
@@ -775,7 +775,6 @@ echo "body { background-color: #f0f0f0; }";
         border-radius: 14px;
         border: 1px solid rgba(0, 0, 0, 0.25);
         background: rgba(252, 252, 252, 0.23);
-        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.25);
         backdrop-filter: blur(5px);
         width: 100%;
         height: 5rem;
@@ -818,6 +817,12 @@ echo "body { background-color: #f0f0f0; }";
 
     .progress-bar-daily-fats {
         background: #FF6900;
+        height: 100%;
+        border-radius: 50px;
+    }
+
+    .progress-bar-daily-water {
+        background: #4285F4;
         height: 100%;
         border-radius: 50px;
     }
@@ -883,6 +888,12 @@ echo "body { background-color: #f0f0f0; }";
         border-radius: 14px;
     }
 
+    .water-icon-daily {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+        background: #4285F4;
+    }
 
     .icon-daily-padi {
         border-radius: 3px;

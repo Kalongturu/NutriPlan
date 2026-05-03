@@ -194,7 +194,7 @@
                         </svg>
                         <h6 class="fw-bold mb-0 mx-2">Daily Intake</h6>
                     </div>
-                    <div class="wrapper-daily-list-home border">
+                    <div class="wrapper-daily-list-home">
                         @include('components.layout-daily')
                     </div>
 
