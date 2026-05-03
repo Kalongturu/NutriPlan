@@ -1,14 +1,15 @@
-<div class="wrapper-content-meal-home d-flex px-2">
-    <div class="gambar-meal align-items-center d-flex m-0">
-        <img src="{{ asset('img/meal1_home.png') }}" alt="">
+<div class="wrapper-content-meal-home d-flex px-2 py-2">
+    <div class="align-items-center d-flex">
+        {{-- Batas ukuran gambar 96 x 96 px ada di class gambar-meal --}}
+        <img src="{{ asset('img/meal1_home.png') }}" alt="" class="gambar-meal">
     </div>
-    <div class="d-flex flex-column py-2 ms-2">
+    <div class="d-flex flex-column ms-2">
         {{-- Type meal --}}
         <p class="type-meal m-0 p-o">Breakfast</p>
         {{-- Name meal --}}
         <h6 class="name-meal mb-1 p-0 fw-bold">Avocado Toast & Poached Eggs</h6>
         {{-- Category Meal --}}
-        <p class="category-meal d-flex border mb-1 gap-1 fw-bold">
+        <p class="category-meal d-flex mb-1 gap-1 fw-bold">
             <span class="text-white px-1 ktg-oren-home">Quick Meal</span>
             <span class="text-white px-1 ktg-ijo-home">Balanced</span>
         </p>

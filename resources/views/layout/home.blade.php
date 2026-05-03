@@ -4,7 +4,7 @@
 
 @section('title', 'Homepage')
 @section('content')
-    <div class="col-10 border">
+    <div class="col-10">
         <div class="row py-0">
             <div class="col-4">
                 <h5 class="fw-bold">Selamat datang, {{ session('user_name') }}</h5>
@@ -32,7 +32,7 @@
 
             </div>
             {{-- Container meal & drink --}}
-            <div class="col-5 border">
+            <div class="col-5 pb-3">
                 {{-- Wadah untuk meals-list dan headernya --}}
                 <div class="wrapper-meal-home">
                     <div class="header-meals d-flex justify-content-between align-items-center mb-1">
@@ -77,8 +77,8 @@
                         <p class="tgl m-0">Goal this week</p>
                     </div>
                     <div class="d-flex flex-wrap">
-                        <div class="card-6 water-intake d-flex p-0">
-                            <div class="water-content px-1 py-2 border">
+                        <div class="card-6 d-flex p-0">
+                            <div class="crd6-content px-1 py-2">
                                 <div class="p-0 d-flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                                         viewBox="0 0 12 12" fill="none">
@@ -108,13 +108,64 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-6"></div>
-                        <div class="card-6"></div>
-                        <div class="card-6"></div>
+                        <div class="card-6 d-flex p-0">
+                            <div class="crd6-content py-2 px-1">
+                                <div class="p-0 d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                        viewBox="0 0 12 12" fill="none">
+                                        <path
+                                            d="M6 4C6.82843 4 7.5 3.32843 7.5 2.5C7.5 1.67157 6.82843 1 6 1C5.17157 1 4.5 1.67157 4.5 2.5C4.5 3.32843 5.17157 4 6 4Z"
+                                            stroke="#AD46FF" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M3.25011 4C3.03374 4.00225 2.82393 4.07461 2.65218 4.20624C2.48044 4.33787 2.35602 4.52165 2.29761 4.73L1.05011 9.25C1.01231 9.39629 1.00815 9.54925 1.03795 9.69737C1.06775 9.8455 1.13072 9.98495 1.22215 10.1052C1.31357 10.2255 1.43107 10.3236 1.56581 10.3919C1.70055 10.4603 1.84904 10.4972 2.00011 10.5H10.0001C10.1544 10.4999 10.3067 10.4642 10.4449 10.3955C10.5831 10.3268 10.7035 10.227 10.7967 10.104C10.8899 9.98101 10.9534 9.8381 10.9822 9.68647C11.011 9.53484 11.0043 9.3786 10.9626 9.23L9.70011 4.75C9.64504 4.5367 9.52109 4.34756 9.3475 4.21194C9.1739 4.07632 8.96039 4.00182 8.74011 4H3.25011Z"
+                                            stroke="#AD46FF" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <p class="p-water m-0">Weight</p>
+                                    <div class="d-flex align-items-center ms-auto">
+                                        <p class="p-crd-home mb-0">kg</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-6">
+                            <div class="crd6-content py-2 px-1">
+                                <div class="p-0 d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                        viewBox="0 0 12 12" fill="none">
+                                        <path
+                                            d="M11 6H9.76C9.54148 5.99953 9.32883 6.07065 9.15456 6.20248C8.98029 6.33431 8.854 6.5196 8.795 6.73L7.62 10.91C7.61243 10.936 7.59664 10.9588 7.575 10.975C7.55336 10.9912 7.52705 11 7.5 11C7.47295 11 7.44664 10.9912 7.425 10.975C7.40336 10.9588 7.38757 10.936 7.38 10.91L4.62 1.09C4.61243 1.06404 4.59664 1.04123 4.575 1.025C4.55336 1.00877 4.52705 1 4.5 1C4.47295 1 4.44664 1.00877 4.425 1.025C4.40336 1.04123 4.38757 1.06404 4.38 1.09L3.205 5.27C3.14623 5.47958 3.02069 5.66426 2.84743 5.79601C2.67417 5.92776 2.46266 5.99938 2.245 6H1"
+                                            stroke="#00C950" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <p class="p-water m-0">BMI Status</p>
+                                    <div class="d-flex align-items-center ms-auto">
+                                        <p class="p-crd-home mb-0">170 cm</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-6">
+                            <div class="crd6-content py-2 px-1">
+                                <div class="p-0 d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                        viewBox="0 0 12 12" fill="none">
+                                        <path
+                                            d="M4.25 7.25C4.58152 7.25 4.89946 7.1183 5.13388 6.88388C5.3683 6.64946 5.5 6.33152 5.5 6C5.5 5.31 5.25 5 5 4.5C4.464 3.4285 4.888 2.473 6 1.5C6.25 2.75 7 3.95 8 4.75C9 5.55 9.5 6.5 9.5 7.5C9.5 7.95963 9.40947 8.41475 9.23358 8.83939C9.05769 9.26403 8.79988 9.64987 8.47487 9.97487C8.14987 10.2999 7.76403 10.5577 7.33939 10.7336C6.91475 10.9095 6.45963 11 6 11C5.54037 11 5.08525 10.9095 4.66061 10.7336C4.23597 10.5577 3.85013 10.2999 3.52513 9.97487C3.20012 9.64987 2.94231 9.26403 2.76642 8.83939C2.59053 8.41475 2.5 7.95963 2.5 7.5C2.5 6.9235 2.7165 6.353 3 6C3 6.33152 3.1317 6.64946 3.36612 6.88388C3.60054 7.1183 3.91848 7.25 4.25 7.25Z"
+                                            stroke="#FF6900" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <p class="p-water m-0">Calories</p>
+                                    <div class="d-flex align-items-center ms-auto">
+                                        <p class="p-crd-home mb-0">Daily Goals</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="wrapper-report-home">
-                    <div class="d-flex align-items-center">
+                <div class="wrapper-shop-home">
+                    <div class="d-flex mb-0 align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
@@ -123,9 +174,13 @@
                         </svg>
                         <h6 class="fw-bold mb-0 mx-2">Shopping List</h6>
                     </div>
+                    <div class="wrapper-shop-list-home">
+                        {{-- Untuk templating, id bisa menggunakan loop sebagai pembeda --}}
+                        @include('components.shop_template')
+                    </div>
                 </div>
                 <div class="wrapper-daily-home">
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
@@ -139,6 +194,10 @@
                         </svg>
                         <h6 class="fw-bold mb-0 mx-2">Daily Intake</h6>
                     </div>
+                    <div class="wrapper-daily-list-home border">
+                        @include('components.layout-daily')
+                    </div>
+
                 </div>
                 <div class="wrapper-daily-home">
                     <div class="d-flex align-items-center">
@@ -154,9 +213,11 @@
             </div>
         </div>
     </div>
-    <div class="col-2 pb-5 border">
-        <div class="wrapper-home1">
-
+    <div class="col-2 pb-3">
+        <div class="wrapper-home1 py-2 d-flex m-0">
+            {{-- Ini untuk rekomendasi resep --}}
+            {{-- Templating rekomendasi resep --}}
+            @include('components.recipes_recomendation')
         </div>
     </div>
 @endsection

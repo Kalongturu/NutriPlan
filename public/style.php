@@ -5,11 +5,6 @@ echo "body { background-color: #f0f0f0; }";
 <style>
     /* Font style */
 
-    :root {
-        --warna-ijo: #95cd41;
-        --warna-oren: #ea5c2b;
-    }
-
     @font-face {
         font-family: "SF Pro Display";
         src: url("fonts/SFProDisplay-Regular.ttf") format("truetype");
@@ -21,6 +16,8 @@ echo "body { background-color: #f0f0f0; }";
 
     :root {
         font-size: 16px;
+        --warna-ijo: #95cd41 !important;
+        --warna-oren: #ea5c2b !important;
     }
 
     body {
@@ -91,7 +88,7 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .oren-bunder {
-        background-color: #ea5c2b;
+        background-color: var(--warna-oren);
         transition: all 0.3s ease;
         border-radius: 100%;
     }
@@ -101,7 +98,7 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .oren {
-        background-color: #ea5c2b;
+        background-color: var(--warna-oren);
         transition: all 0.3s ease;
     }
 
@@ -264,6 +261,10 @@ echo "body { background-color: #f0f0f0; }";
         padding-top: 2px;
     }
 
+    .p-card-daily {
+        font-size: 0.625rem;
+    }
+
     .elm {
         border-radius: 8px;
         border: 1px solid rgba(0, 0, 0, 0.1);
@@ -420,7 +421,7 @@ echo "body { background-color: #f0f0f0; }";
 
     .Num-oren {
         font-weight: 700;
-        background: #ea5c2b;
+        background: var(--warna-oren);
         padding: 0 0.5rem;
         border-radius: 200px;
     }
@@ -440,14 +441,14 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .ktg-oren {
-        background: #ea5c2b;
+        background: var(--warna-oren);
         padding: 0 0.5rem;
         font-size: 0.625rem;
         border-radius: 5px;
     }
 
     .ktg-oren-home {
-        background: #ea5c2b;
+        background: var(--warna-oren);
         padding: 0 0.5rem;
         font-size: 0.5rem;
         border-radius: 5px;
@@ -638,13 +639,15 @@ echo "body { background-color: #f0f0f0; }";
     }
 
     .wrapper-meal-home {
-        background: rgba(255, 255, 255, 0.60);
         min-width: 5rem;
-        height: 80vh;
-        border-radius: 24px;
-        border: 0.8px solid rgba(255, 237, 212, 0.60);
+        height: 100%;
         padding: 1rem;
         overflow: hidden;
+        border-radius: 24px;
+        border: 0.8px solid rgba(255, 237, 212, 0.60);
+        background: rgba(252, 252, 252, 0.23);
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.25);
+        backdrop-filter: blur(5px);
     }
 
     .wrapper-daily-home {
@@ -656,15 +659,16 @@ echo "body { background-color: #f0f0f0; }";
         background: rgba(252, 252, 252, 0.23);
         box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.25);
         backdrop-filter: blur(5px);
+        overflow: hidden;
     }
 
     .wrapper-home1 {
         border-radius: 10px;
         background: #FFF;
         box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
-        min-height: 90vh;
+        min-height: 100%;
         height: auto;
-        min-width: 7rem;
+        min-width: 10rem;
     }
 
     .wrapper-report-home {
@@ -676,6 +680,40 @@ echo "body { background-color: #f0f0f0; }";
         height: 20rem;
         margin-bottom: 1rem;
         padding: 1rem;
+    }
+
+    .wrapper-shop-home {
+        border-radius: 10px;
+        background: rgba(252, 252, 252, 0.23);
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.50);
+        backdrop-filter: blur(5px);
+        width: 16rem;
+        height: 20rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .wrapper-shop-list-home {
+        overflow: hidden;
+        background: none;
+        margin: 0;
+        height: calc(100% - 1rem);
+    }
+
+    .wrapper-daily-list-home {
+        overflow: hidden;
+        background: none;
+        height: calc(100% - 1rem);
+    }
+
+    .daily-list {
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .daily-list::-webkit-scrollbar {
+        display: none;
     }
 
     .wrapper-content-meal-home {
@@ -690,10 +728,8 @@ echo "body { background-color: #f0f0f0; }";
 
     .meals-list {
         overflow-y: auto;
-        height: calc(100% - 2rem);
         display: flex;
         flex-direction: column;
-
     }
 
     .meals-list::-webkit-scrollbar {
@@ -705,6 +741,8 @@ echo "body { background-color: #f0f0f0; }";
         top: 0;
         z-index: 10;
     }
+
+
 
     .type-meal {
         font-size: 0.8rem;
@@ -724,7 +762,106 @@ echo "body { background-color: #f0f0f0; }";
         font-size: 0.4rem;
     }
 
-    .water-content {
+    .shopping-list {
+        overflow-y: auto;
+        height: calc(100% - 1rem);
+    }
+
+    .shopping-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container-content-daily {
+        border-radius: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        background: rgba(252, 252, 252, 0.23);
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.25);
+        backdrop-filter: blur(5px);
+        width: 100%;
+        height: 5rem;
+    }
+
+    .btn-daily {
+        border-radius: 10px;
+        border: 0.8px solid #E5E7EB;
+        background: #FFF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+
+    .btn-daily:hover {
+        background: #bfbfbf;
+    }
+
+    .progress-daily {
+        height: 8px;
+        border-radius: 50px;
+        background: #E5E7EB;
+    }
+
+    .progress-bar-daily {
+        background: #FE9A00;
+        height: 100%;
+        border-radius: 50px;
+    }
+
+    .progress-bar-daily-protein {
+        background: #FB2C36;
+        height: 100%;
+        border-radius: 50px;
+    }
+
+    .progress-bar-daily-fats {
+        background: #FF6900;
+        height: 100%;
+        border-radius: 50px;
+    }
+
+    .shopping-list input[type="checkbox"] {
+        margin-right: 0.5rem;
+        width: 1.125rem;
+        height: 1.125rem;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: transparent;
+        border: 1px solid #000;
+        border-radius: 4px;
+        padding: 0;
+    }
+
+    .shopping-list input[type="checkbox"]:checked+label {
+        text-decoration: line-through;
+        color: #364153;
+    }
+
+    .gambar-rekomendasi {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .shopping-list input[type="checkbox"]:checked {
+        background-color: var(--warna-ijo);
+    }
+
+    .shopping-list input[type="checkbox"]:checked::after {
+        content: "✔";
+        color: white;
+        font-size: 0.875rem;
+        display: flex;
+        padding: 0;
+        margin-bottom: 3px;
+        justify-content: center;
+    }
+
+    .crd6-content {
         width: 100%;
         justify-content: space-between;
     }
@@ -738,6 +875,31 @@ echo "body { background-color: #f0f0f0; }";
 
     .font-size-s {
         font-size: 0.55rem;
+    }
+
+    .gambar-meal {
+        width: 96px;
+        height: 96px;
+        border-radius: 14px;
+    }
+
+
+    .icon-daily-padi {
+        border-radius: 3px;
+        background: #FE9A00;
+        padding: 3px;
+    }
+
+    .icon-daily-fats {
+        border-radius: 3px;
+        padding: 3px;
+        background: #FF6900;
+    }
+
+    .icon-daily-apokad {
+        border-radius: 3px;
+        padding: 3px;
+        background: #FB2C36;
     }
 
     .tgl {
