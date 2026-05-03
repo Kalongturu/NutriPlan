@@ -101,11 +101,35 @@
                                         <p class="p-crd-home my-0">Daily Week</p>
                                     </div>
                                 </div>
-                                <div class="water-container position-relative">
-                                    <div class="water-slide position-absolute">
-
-                                    </div>
+                                {{-- h6 ini diberi id penanda sebagai nilai dari air yang sudah diinput pengguna --}}
+                                {{-- Untuk setting lengkapnya ada di file js --}}
+                                <div class="water-container d-flex flex-column align-items-center justify-content-center">
+                                    <h6 class="fw-bold m-0" id="water-value-report">0</h6>
+                                    <p class="p-0 m-0 p-card-daily text-white" id="value-report-ml">ml</p>
+                                    <div class="water-bar"></div>
                                 </div>
+                                <div class="d-flex justify-content-between align-items-center control-water">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <button class="btn-report p-0 m-0" id="minus">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M2.5 6H9.5" stroke="#4A5565" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-report p-0 m-0" id="plus">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M2.5 6H9.5" stroke="#155DFC" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M6 2.5V9.5" stroke="#155DFC" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="p-crd-home text-muted p-0 m-0">/2000</p>
+                                </div>
+
                             </div>
                         </div>
                         <div class="card-6 d-flex p-0">
@@ -125,7 +149,26 @@
                                         <p class="p-crd-home my-0">kg</p>
                                     </div>
                                 </div>
-
+                                <div class="d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="129" height="86"
+                                        viewBox="0 0 129 86" fill="none">
+                                        <path
+                                            d="M16.125 69.875C16.6459 60.3218 19.9878 51.1376 25.7283 43.4837C31.4687 35.8298 39.3498 30.0499 48.375 26.875"
+                                            stroke="#86EFAC" stroke-width="8.6" stroke-linecap="round" />
+                                        <path d="M48.375 26.875C58.8085 23.1862 70.1915 23.1862 80.625 26.875"
+                                            stroke="#60A5FA" stroke-width="8.6" stroke-linecap="round" />
+                                        <path
+                                            d="M80.625 26.875C89.6502 30.0499 97.5313 35.8298 103.272 43.4837C109.012 51.1376 112.354 60.3218 112.875 69.875"
+                                            stroke="#FB923C" stroke-width="8.6" stroke-linecap="round" />
+                                        <path
+                                            d="M64.4999 73.1C66.281 73.1 67.7249 71.6561 67.7249 69.875C67.7249 68.0939 66.281 66.65 64.4999 66.65C62.7188 66.65 61.2749 68.0939 61.2749 69.875C61.2749 71.6561 62.7188 73.1 64.4999 73.1Z"
+                                            fill="#374151" />
+                                        <path d="M64.4999 69.875L56.2302 30.9692" stroke="#374151" stroke-width="2.15"
+                                            stroke-linecap="round" />
+                                        <path d="M46.7625 39.1527L48.9125 42.8766" stroke="#8B5CF6" stroke-width="2.15"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                         <div class="card-6">
@@ -159,7 +202,21 @@
                                         <p class="p-crd-home my-0">Daily Goals</p>
                                     </div>
                                 </div>
-
+                                <div class="d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+                                        viewBox="0 0 96 96" fill="none">
+                                        <path
+                                            d="M90 48C90 24.804 71.196 6 48 6C24.804 6 6 24.804 6 48C6 71.196 24.804 90 48 90C71.196 90 90 71.196 90 48Z"
+                                            stroke="#E5E7EB" stroke-width="8" />
+                                        <path
+                                            d="M90 48C90 24.804 71.196 6 48 6C24.804 6 6 24.804 6 48C6 71.196 24.804 90 48 90C71.196 90 90 71.196 90 48Z"
+                                            stroke="#F97316" stroke-width="8" stroke-linecap="round"
+                                            stroke-dasharray="263.89 263.89" />
+                                        <path opacity="0.3"
+                                            d="M86 48C86 27.0132 68.9868 10 48 10C27.0132 10 10 27.0132 10 48C10 68.9868 27.0132 86 48 86C68.9868 86 86 68.9868 86 48Z"
+                                            stroke="#FB923C" stroke-width="0.5" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,7 +229,7 @@
                                 d="M0 3.75C0 3.33579 0.335786 3 0.75 3H3C3.34415 3 3.64414 3.23422 3.72761 3.5681L4.33558 6H21.75C21.981 6 22.199 6.1064 22.3412 6.28844C22.4833 6.47048 22.5336 6.70785 22.4776 6.9319L20.2276 15.9319C20.1441 16.2658 19.8442 16.5 19.5 16.5H6C5.65585 16.5 5.35586 16.2658 5.27239 15.9319L2.41442 4.5H0.75C0.335786 4.5 0 4.16421 0 3.75ZM4.71058 7.5L5.46058 10.5H7.5V7.5H4.71058ZM9 7.5V10.5H12V7.5H9ZM13.5 7.5V10.5H16.5V7.5H13.5ZM18 7.5V10.5H20.0394L20.7894 7.5H18ZM19.6644 12H18V15H18.9144L19.6644 12ZM16.5 12H13.5V15H16.5V12ZM12 12H9V15H12V12ZM7.5 12H5.83558L6.58558 15H7.5V12ZM7.5 19.5C6.67157 19.5 6 20.1716 6 21C6 21.8284 6.67157 22.5 7.5 22.5C8.32843 22.5 9 21.8284 9 21C9 20.1716 8.32843 19.5 7.5 19.5ZM4.5 21C4.5 19.3431 5.84315 18 7.5 18C9.15685 18 10.5 19.3431 10.5 21C10.5 22.6569 9.15685 24 7.5 24C5.84315 24 4.5 22.6569 4.5 21ZM18 19.5C17.1716 19.5 16.5 20.1716 16.5 21C16.5 21.8284 17.1716 22.5 18 22.5C18.8284 22.5 19.5 21.8284 19.5 21C19.5 20.1716 18.8284 19.5 18 19.5ZM15 21C15 19.3431 16.3431 18 18 18C19.6569 18 21 19.3431 21 21C21 22.6569 19.6569 24 18 24C16.3431 24 15 22.6569 15 21Z"
                                 fill="black" />
                         </svg>
-                        <h6 class="fw-bold mb-0 mx-2">Shopping List</h6>
+                        <h6 class="fw-bold my-0 mx-2">Shopping List</h6>
                     </div>
                     <div class="wrapper-shop-list-home">
                         {{-- Untuk templating, id bisa menggunakan loop sebagai pembeda --}}

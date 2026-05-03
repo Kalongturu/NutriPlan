@@ -719,9 +719,10 @@ echo "body { background-color: #f0f0f0; }";
 
     .wrapper-content-meal-home {
         border-radius: 16px;
-        border: 0.8px solid #F5F5F4;
-        background: #FFF;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);
+        border: 0.8px solid rgba(0, 0, 0, 0.20);
+        background: rgba(252, 252, 252, 0.23);
+        box-shadow: 0 10px 24px 0 rgba(140, 136, 136, 0.25);
+        backdrop-filter: blur(5px);
         width: 17.5rem;
         height: 7rem;
         margin-left: auto;
@@ -833,6 +834,24 @@ echo "body { background-color: #f0f0f0; }";
     }
 
 
+    .btn-report {
+        border-radius: 10px;
+        border: 0.8px solid #E5E7EB;
+        background: #FFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+
+    .btn-report:hover {
+        background: #bfbfbf;
+    }
+
     .btn-daily:hover {
         background: #bfbfbf;
     }
@@ -914,8 +933,33 @@ echo "body { background-color: #f0f0f0; }";
     .water-container {
         width: 100%;
         height: 3.2rem;
-        background-color: rgba(74, 85, 101, 0.2);
+        background-color: rgba(74, 85, 101, 0.5);
         border-radius: 10px;
+        margin-bottom: 0.1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .water-bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        background: #3B82F6;
+        transition: height 0.3s ease, background 0.3s ease;
+        z-index: 1;
+    }
+
+    #value-report-ml {
+        z-index: 2;
+        position: relative;
+    }
+
+    #water-value-report {
+        z-index: 2;
+        position: relative;
+        color: #FFF;
     }
 
     .font-size-s {
