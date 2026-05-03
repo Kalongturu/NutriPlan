@@ -727,6 +727,46 @@ echo "body { background-color: #f0f0f0; }";
         margin-left: auto;
     }
 
+    .chart-activity {
+        height: calc(100% - 2rem);
+        margin-top: 2rem;
+    }
+
+    .bar {
+        width: 100%;
+        border-radius: 24px;
+        background: rgba(30, 77, 106, 0.50);
+        transition: height 0.3s ease;
+    }
+
+    .highest-bar {
+        width: 100%;
+        border-radius: 24px;
+        background: linear-gradient(180deg, #51A2FF 0%, #155DFC 100%);
+        transition: height 0.3s ease;
+    }
+
+    .nilai-bar {
+        position: absolute;
+        top: -1.2rem;
+    }
+
+    .day-bar {
+        position: relative;
+        height: 100%;
+        width: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .wrapper-activity-home {
+        width: 100%;
+        height: calc(100% - 2rem);
+        margin: 0;
+    }
+
     .meals-list {
         overflow-y: auto;
         display: flex;

@@ -98,7 +98,7 @@
                                     </svg>
                                     <p class="p-water m-0">Water</p>
                                     <div class="d-flex align-items-center ms-auto">
-                                        <p class="p-crd-home mb-0">Daily Week</p>
+                                        <p class="p-crd-home my-0">Daily Week</p>
                                     </div>
                                 </div>
                                 <div class="water-container position-relative">
@@ -122,7 +122,7 @@
                                     </svg>
                                     <p class="p-water m-0">Weight</p>
                                     <div class="d-flex align-items-center ms-auto">
-                                        <p class="p-crd-home mb-0">kg</p>
+                                        <p class="p-crd-home my-0">kg</p>
                                     </div>
                                 </div>
 
@@ -139,7 +139,7 @@
                                     </svg>
                                     <p class="p-water m-0">BMI Status</p>
                                     <div class="d-flex align-items-center ms-auto">
-                                        <p class="p-crd-home mb-0">170 cm</p>
+                                        <p class="p-crd-home my-0">170 cm</p>
                                     </div>
                                 </div>
 
@@ -156,7 +156,7 @@
                                     </svg>
                                     <p class="p-water m-0">Calories</p>
                                     <div class="d-flex align-items-center ms-auto">
-                                        <p class="p-crd-home mb-0">Daily Goals</p>
+                                        <p class="p-crd-home my-0">Daily Goals</p>
                                     </div>
                                 </div>
 
@@ -208,6 +208,9 @@
                                 stroke="black" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <h6 class="fw-bold mb-0 mx-2">Activity</h6>
+                    </div>
+                    <div class="wrapper-activity-home d-flex">
+                        @include('components.activity_home')
                     </div>
                 </div>
             </div>
