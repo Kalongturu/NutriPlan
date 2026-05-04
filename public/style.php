@@ -940,6 +940,15 @@ echo "body { background-color: #f0f0f0; }";
         overflow: hidden;
     }
 
+    .mb-01 {
+        margin-bottom: 0.1rem;
+    }
+
+    .svg-weight {
+        z-index: 2;
+        position: relative;
+    }
+
     .water-bar {
         position: absolute;
         left: 0;
@@ -954,6 +963,35 @@ echo "body { background-color: #f0f0f0; }";
     #value-report-ml {
         z-index: 2;
         position: relative;
+    }
+
+    #current-weight {
+        position: absolute;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        top: 55%;
+        left: 50%;
+    }
+
+
+    #current-bmi {
+        position: absolute;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        top: 55%;
+        left: 50%;
+    }
+
+    .svg-bmi {
+        height: 2.5rem;
+    }
+
+    #target-p-weight {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
 
     #water-value-report {

@@ -132,6 +132,7 @@
 
                             </div>
                         </div>
+                        {{-- Konten weight --}}
                         <div class="card-6 d-flex p-0">
                             <div class="crd6-content py-2 px-1">
                                 <div class="p-0 d-flex">
@@ -149,9 +150,9 @@
                                         <p class="p-crd-home my-0">kg</p>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="129" height="86"
-                                        viewBox="0 0 129 86" fill="none">
+                                <div class="d-flex align-items-center justify-content-center position-relative p-0 mb-01">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="50"
+                                        viewBox="0 0 129 86" fill="none" class="svg-weight">
                                         <path
                                             d="M16.125 69.875C16.6459 60.3218 19.9878 51.1376 25.7283 43.4837C31.4687 35.8298 39.3498 30.0499 48.375 26.875"
                                             stroke="#86EFAC" stroke-width="8.6" stroke-linecap="round" />
@@ -168,11 +169,33 @@
                                         <path d="M46.7625 39.1527L48.9125 42.8766" stroke="#8B5CF6" stroke-width="2.15"
                                             stroke-linecap="round" />
                                     </svg>
+                                    <h6 id="current-weight" class="fw-bold m-0">68.0</h6>
+                                    <p id="target-p-weight" class="p-crd-home text-muted p-0 m-0">Target: <span
+                                            id="target-weight">65</span></p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items center gap-2">
+                                        <button class="btn-report p-0 m-0" id="down-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M3 4.5L6 7.5L9 4.5" stroke="#4A5565" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-report p-0 m-0" id="up-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M9 7.5L6 4.5L3 7.5" stroke="#9810FA" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="p-crd-home p-0 m-0" id="value-weight-kg">+3.0kg</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-6">
-                            <div class="crd6-content py-2 px-1">
+                            <div class="crd6-content py-2 px-1 flex-column  gap-2 d-flex">
                                 <div class="p-0 d-flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                                         viewBox="0 0 12 12" fill="none">
@@ -185,7 +208,61 @@
                                         <p class="p-crd-home my-0">170 cm</p>
                                     </div>
                                 </div>
-
+                                <div
+                                    class="d-flex svg-bmi align-items-center justify-content-center p-0 m-0 position-relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="110" height="70"
+                                        viewBox="0 0 129 90" fill="none" class="svg-weight">
+                                        <path
+                                            d="M16.125 71.875C16.5365 64.3637 18.6941 57.0518 22.4263 50.5204C26.1586 43.989 31.3626 38.418 37.625 34.25"
+                                            stroke="#60A5FA" stroke-width="8.6" stroke-linecap="round" />
+                                        <path d="M37.625 34.25C45.2762 28.0077 54.6545 24.2564 64.5 23.5" stroke="#34D399"
+                                            stroke-width="8.6" stroke-linecap="round" />
+                                        <path d="M64.5 23.5C74.3455 24.2564 83.7238 28.0077 91.375 34.25" stroke="#FBBF24"
+                                            stroke-width="8.6" stroke-linecap="round" />
+                                        <path
+                                            d="M91.375 34.25C97.6374 38.418 102.841 43.989 106.574 50.5204C110.306 57.0518 112.464 64.3637 112.875 71.875"
+                                            stroke="#F87171" stroke-width="8.6" stroke-linecap="round" />
+                                        <path d="M34.4 37.475L37.625 40.7" stroke="#9CA3AF" stroke-width="1.075"
+                                            stroke-linecap="round" />
+                                        <path d="M62.35 26.725L64.5 29.95" stroke="#9CA3AF" stroke-width="1.075"
+                                            stroke-linecap="round" />
+                                        <path d="M91.375 37.475L94.6 40.7" stroke="#9CA3AF" stroke-width="1.075"
+                                            stroke-linecap="round" />
+                                        <path
+                                            d="M64.5 75.1C66.2811 75.1 67.725 73.6561 67.725 71.875C67.725 70.0939 66.2811 68.65 64.5 68.65C62.7189 68.65 61.275 70.0939 61.275 71.875C61.275 73.6561 62.7189 75.1 64.5 75.1Z"
+                                            fill="#374151" />
+                                        <path d="M64.5001 71.875L55.3936 33.1565" stroke="#34D399" stroke-width="2.6875"
+                                            stroke-linecap="round" />
+                                        <path opacity="0.3"
+                                            d="M64.5 76.175C66.8748 76.175 68.8 74.2498 68.8 71.875C68.8 69.5002 66.8748 67.575 64.5 67.575C62.1251 67.575 60.2 69.5002 60.2 71.875C60.2 74.2498 62.1251 76.175 64.5 76.175Z"
+                                            fill="#34D399" />
+                                    </svg>
+                                    <h6 id="current-bmi" class="fw-bold m-0">23.1</h6>
+                                    <p id="target-p-bmi" class="p-crd-home p-0 m-0"><span id="ket-bmi">Normal</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center control-bmi">
+                                    <div class="d-flex gap-1 align-items-center">
+                                        <p class="p-crd-home text-dark p-0 m-0">Weight: </p>
+                                        <button class="btn-report p-0 m-0" id="minus-weight">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M2.5 6H9.5" stroke="#4A5565" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                        <button class="btn-report p-0 m-0" id="plus-weight">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"
+                                                viewBox="0 0 12 12" fill="none">
+                                                <path d="M2.5 6H9.5" stroke="#155DFC" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M6 2.5V9.5" stroke="#155DFC" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="p-crd-home fw-bold p-0 m-0" id="ket-berat">68 kg</p>
+                                </div>
                             </div>
                         </div>
                         <div class="card-6">
@@ -202,8 +279,8 @@
                                         <p class="p-crd-home my-0">Daily Goals</p>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+                                <div class="d-flex justify-content-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                         viewBox="0 0 96 96" fill="none">
                                         <path
                                             d="M90 48C90 24.804 71.196 6 48 6C24.804 6 6 24.804 6 48C6 71.196 24.804 90 48 90C71.196 90 90 71.196 90 48Z"
