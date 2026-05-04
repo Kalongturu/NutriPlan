@@ -102,6 +102,68 @@ function updateGauge() {
     updateGauge();
 });
 // Ini script untuk BMI
+document.addEventListener("DOMContentLoaded", () => {
+    const height = 170; // cm
+    let weight = 68;    // kg awal
+
+    const bmiText = document.getElementById("current-bmi");
+    const ketElement = document.getElementById("ket-bmi");
+    const weightText = document.getElementById("ket-berat");
+    const plusBtn = document.getElementById("plus-weight");
+    const minusBtn = document.getElementById("minus-weight");
+
+    // ambil semua path hijau, lalu pilih yang terakhir (jarum)
+    const greenPaths = document.querySelectorAll(".svg-weight path[stroke='#34D399']");
+    const needle = greenPaths[greenPaths.length - 1];
+
+    // helper mapping nilai ke sudut
+    function mapRange(value, inMin, inMax, outMin, outMax) {
+        return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+    }
+
+    function calculateBMI(w, h) {
+        const hm = h / 100;
+        return w / (hm * hm);
+    }
+
+    function updateBMI() {
+        const bmi = calculateBMI(weight, height);
+
+        // update angka
+        bmiText.textContent = bmi.toFixed(1);
+        weightText.textContent = `${weight} kg`;
+
+        // tentukan status + warna + sudut jarum
+        let status, color, angle;
+        if (bmi < 18.5) {
+            status = "Underweight"; color = "#60A5FA";
+            angle = mapRange(bmi, 10, 18.5, -90, -25);
+        } else if (bmi < 25) {
+            status = "Normal"; color = "#34D399";
+            angle = mapRange(bmi, 18.5, 25, -25, 10);
+        } else if (bmi < 30) {
+            status = "Overweight"; color = "#FBBF24";
+            angle = mapRange(bmi, 25, 30, 10, 45);
+        } else {
+            status = "Obese"; color = "#F87171";
+            angle = mapRange(bmi, 30, 40, 45, 90);
+        }
+
+        ketElement.textContent = status;
+        ketElement.style.color = color;
+
+        // update jarum
+        needle.setAttribute("transform", `rotate(${angle},64.5,71.875)`);
+    }
+
+    plusBtn.onclick = () => { weight++; updateBMI(); };
+    minusBtn.onclick = () => { if (weight > 1) weight--; updateBMI(); };
+
+    // inisialisasi
+    updateBMI();
+});
+
+
 
 
 

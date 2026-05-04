@@ -846,6 +846,7 @@ echo "body { background-color: #f0f0f0; }";
         cursor: pointer;
         padding: 0;
         margin: 0;
+        z-index: 3;
     }
 
     .btn-report:hover {
@@ -976,9 +977,9 @@ echo "body { background-color: #f0f0f0; }";
 
     #current-bmi {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         transform: translate(-50%, -50%);
-        top: 55%;
+        top: 70%;
         left: 50%;
     }
 
@@ -991,7 +992,7 @@ echo "body { background-color: #f0f0f0; }";
         top: 90%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 1;
+        z-index: 2;
     }
 
     #water-value-report {
@@ -1033,6 +1034,14 @@ echo "body { background-color: #f0f0f0; }";
         border-radius: 3px;
         padding: 3px;
         background: #FB2C36;
+    }
+
+    #ket-bmi {
+        position: absolute;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        top: 110%;
+        left: 50%;
     }
 
     .tgl {

@@ -209,7 +209,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="d-flex svg-bmi align-items-center justify-content-center p-0 m-0 position-relative">
+                                    class="d-flex svg-bmi p-0 m-0 position-relative align-items-center justify-content-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="110" height="70"
                                         viewBox="0 0 129 90" fill="none" class="svg-weight">
                                         <path
@@ -261,6 +261,7 @@
                                             </svg>
                                         </button>
                                     </div>
+
                                     <p class="p-crd-home fw-bold p-0 m-0" id="ket-berat">68 kg</p>
                                 </div>
                             </div>
