@@ -983,6 +983,21 @@ echo "body { background-color: #f0f0f0; }";
         left: 50%;
     }
 
+    #current-kkal {
+        position: absolute;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 50%;
+    }
+
+    #target-p-kkal {
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        top: 60%;
+        left: 50%;
+    }
+
     .svg-bmi {
         height: 2.5rem;
     }

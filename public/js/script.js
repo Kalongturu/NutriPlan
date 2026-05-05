@@ -162,7 +162,37 @@ document.addEventListener("DOMContentLoaded", () => {
     // inisialisasi
     updateBMI();
 });
+// script kalori
+function updateProgressFromDOM() {
+  const current = parseInt(document.getElementById("current-kkal").textContent);
+  const target = parseInt(document.getElementById("maks-kkal").textContent);
+  const percent = Math.min((current / target) * 100, 100);
 
+  // update teks persentase
+  document.getElementById("ket-presentase").textContent = `${percent.toFixed(0)}%`;
+
+  // update lingkaran progres
+  const segments = [seg1, seg2, seg3, seg4];
+  const perSegment = 25;
+
+  segments.forEach((seg, i) => {
+    let threshold = (i + 1) * perSegment;
+    if (percent >= threshold) {
+      seg.setAttribute("stroke-dasharray", "66 198");
+      seg.style.stroke = "#F97316";
+    } else if (percent > i * perSegment) {
+      let fillPercent = (percent - i * perSegment) / perSegment;
+      seg.setAttribute("stroke-dasharray", `${66 * fillPercent} 198`);
+      seg.style.stroke = "#F97316";
+    } else {
+      seg.setAttribute("stroke-dasharray", "0 198");
+      seg.style.stroke = "transparent";
+    }
+  });
+}
+
+// panggil saat halaman load
+document.addEventListener("DOMContentLoaded", updateProgressFromDOM);
 
 
 

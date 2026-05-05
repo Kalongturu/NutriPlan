@@ -280,21 +280,40 @@
                                         <p class="p-crd-home my-0">Daily Goals</p>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-center ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                                        viewBox="0 0 96 96" fill="none">
-                                        <path
-                                            d="M90 48C90 24.804 71.196 6 48 6C24.804 6 6 24.804 6 48C6 71.196 24.804 90 48 90C71.196 90 90 71.196 90 48Z"
-                                            stroke="#E5E7EB" stroke-width="8" />
-                                        <path
-                                            d="M90 48C90 24.804 71.196 6 48 6C24.804 6 6 24.804 6 48C6 71.196 24.804 90 48 90C71.196 90 90 71.196 90 48Z"
-                                            stroke="#F97316" stroke-width="8" stroke-linecap="round"
-                                            stroke-dasharray="263.89 263.89" />
-                                        <path opacity="0.3"
-                                            d="M86 48C86 27.0132 68.9868 10 48 10C27.0132 10 10 27.0132 10 48C10 68.9868 27.0132 86 48 86C68.9868 86 86 68.9868 86 48Z"
-                                            stroke="#FB923C" stroke-width="0.5" />
+                                <div class="d-flex justify-content-center align-items-center position-relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                        viewBox="0 0 96 96" fill="none" class="position-relative">
+                                        <!-- Background lingkaran -->
+                                        <circle cx="48" cy="48" r="42" stroke="#E5E7EB" stroke-width="8"
+                                            fill="none" />
+
+                                        <!-- Segmen 1 -->
+                                        <circle id="seg1" cx="48" cy="48" r="42" stroke="#F97316"
+                                            stroke-width="8" fill="none" stroke-dasharray="66 198"
+                                            stroke-dashoffset="0" stroke-linecap="round" />
+
+                                        <!-- Segmen 2 -->
+                                        <circle id="seg2" cx="48" cy="48" r="42" stroke="#F97316"
+                                            stroke-width="8" fill="none" stroke-dasharray="66 198"
+                                            stroke-dashoffset="-66" stroke-linecap="round" />
+
+                                        <!-- Segmen 3 -->
+                                        <circle id="seg3" cx="48" cy="48" r="42" stroke="#F97316"
+                                            stroke-width="8" fill="none" stroke-dasharray="66 198"
+                                            stroke-dashoffset="-132" stroke-linecap="round" />
+
+                                        <!-- Segmen 4 -->
+                                        <circle id="seg4" cx="48" cy="48" r="42" stroke="#F97316"
+                                            stroke-width="8" fill="none" stroke-dasharray="66 198"
+                                            stroke-dashoffset="-198" stroke-linecap="round" />
                                     </svg>
+
+                                    <h6 id="current-kkal" class="fw-bold m-0">1450</h6>
+                                    <p id="target-p-kkal" class="p-crd-home p-0 m-0 text-muted position-absolute"> kcal of
+                                        <span id="maks-kkal">2000</span>
+                                    </p>
                                 </div>
+                                <p class="p-crd-home fw-bold p-0 m-0" id="ket-presentase">100%</p>
                             </div>
                         </div>
                     </div>
