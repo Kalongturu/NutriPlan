@@ -121,8 +121,9 @@
                 </div>
                 <div class="d-flex justify-content-center flex-grow-0">
                     <ul class="navbar-nav align-items-center mb-xl-0">
-                        <li class="nav-item border item d-flex">
-                            <a class="btn text-center nav-link oren-bunder me-2 p-1 flex-grow-0" href="#">
+                        <li class="nav-item item d-flex">
+                            <a class="btn text-center nav-link oren-bunder me-2 flex-grow-0" href="#"
+                                style="width:38px; height:38px; padding:0; display:flex; align-items:center; justify-content:center;">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                         viewBox="0 0 20 20" fill="none">
                                         <path
@@ -130,9 +131,10 @@
                                             fill="white" />
                                     </svg></span>
                             </a>
-                            <a href="#" class="btn text-center nav-link ijo-bunder p-1 flex-grow-0 me-2">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+
+                            <a href="#" class="btn text-center nav-link ijo-bunder flex-grow-0 me-2"
+                                style="width:38px; height:38px; padding:0; display:flex; align-items:center; justify-content:center;">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                         viewBox="0 0 23 23" fill="none">
                                         <path
                                             d="M11.5 23C13.0878 23 14.375 21.7128 14.375 20.125H8.625C8.625 21.7128 9.91218 23 11.5 23Z"
@@ -140,15 +142,19 @@
                                         <path
                                             d="M11.5 2.75748L10.354 2.98892C7.72731 3.51942 5.75003 5.84291 5.75003 8.625C5.75003 9.5275 5.55688 11.7835 5.09041 14.0044C4.85884 15.1068 4.54903 16.2547 4.13726 17.25H18.8627C18.451 16.2547 18.1412 15.1068 17.9096 14.0043C17.4432 11.7835 17.25 9.52749 17.25 8.625C17.25 5.84289 15.2727 3.51939 12.646 2.98891L11.5 2.75748ZM20.4403 17.25C20.7612 17.8931 21.1334 18.4014 21.5625 18.6875H1.4375C1.86663 18.4014 2.23883 17.8931 2.55976 17.25C3.85138 14.6616 4.31253 9.88879 4.31253 8.625C4.31253 5.1453 6.78529 2.24314 10.0695 1.57987C10.0649 1.53304 10.0625 1.48554 10.0625 1.4375C10.0625 0.643591 10.7061 0 11.5 0C12.2939 0 12.9375 0.643591 12.9375 1.4375C12.9375 1.48554 12.9351 1.53303 12.9305 1.57986C16.2147 2.24311 18.6875 5.14528 18.6875 8.625C18.6875 9.88879 19.1486 14.6616 20.4403 17.25Z"
                                             fill="white" />
-                                    </svg>
-                                </span>
+                                    </svg></span>
                             </a>
-                            <a class="btn text-center nav-link oren-bunder me-2 py-1 px-3 flex-grow-0"
-                                href="#"></a>
+
+                            <a class="btn text-center nav-link oren-bunder me-2 flex-grow-0" href="#"
+                                data-bs-toggle="modal" data-bs-target="#profileModal"
+                                style="width:38px; height:38px; padding:0; display:flex; align-items:center; justify-content:center;
+           font-weight:700; font-size:0.85rem; color:white;">
+                                {{ strtoupper(substr(session('user_name') ?? (session('name') ?? '?'), 0, 1)) }}
+                            </a>
                         </li>
 
                     </ul>
-                    <div class="user-account-info border">
+                    <div class="user-account-info">
                         <h6 class="mb-0 fw-bold info-user">Halo dek</h6>
                         <p class="mb-0 info-user">halodek@gmail.com</p>
                     </div>
@@ -164,6 +170,206 @@
     </main>
     {{-- Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- Profile Modal --}}
+    <style>
+        .profile-modal-content {
+            border-radius: 18px;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .profile-modal-header {
+            background: linear-gradient(135deg, #95cd41 0%, #ea5c2b 100%);
+            padding: 1.5rem 1.5rem 3rem;
+        }
+
+        .profile-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .profile-info-box {
+            border-radius: 12px;
+            background: #F9FAFB;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info-label {
+            font-size: 0.68rem;
+            color: #9CA3AF;
+            margin: 0;
+        }
+
+        .profile-info-value {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        .profile-info-divider {
+            margin: 0.5rem 0;
+            border-color: #E5E7EB;
+        }
+
+        .profile-body {
+            background: #fff;
+            border-radius: 18px 18px 0 0;
+            padding: 1.5rem;
+            margin-top: -1.5rem;
+        }
+
+        .btn-edit-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: 100%;
+            border-radius: 50px;
+            border: 1.5px solid #95cd41;
+            background: #fff;
+            color: #95cd41;
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 0.55rem 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 0.65rem;
+            justify-content: center;
+        }
+
+        .btn-edit-profile:hover {
+            background: #95cd41;
+            color: #fff;
+        }
+
+        .btn-logout-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            width: 100%;
+            border-radius: 50px;
+            border: none;
+            background: #ea5c2b;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 0.55rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-logout-profile:hover {
+            background: #cd4c22;
+            color: #fff;
+        }
+
+        /* Responsif */
+        @media (max-width: 576px) {
+            #profileModal .modal-dialog {
+                margin: auto 1rem;
+                max-width: calc(100% - 2rem);
+            }
+
+            .profile-modal-header {
+                padding: 1.25rem 1.25rem 2.5rem;
+            }
+
+            .profile-avatar {
+                width: 54px;
+                height: 54px;
+                font-size: 1.3rem;
+            }
+
+            .profile-body {
+                padding: 1.25rem;
+            }
+
+            .profile-info-value {
+                font-size: 0.82rem;
+            }
+
+            .btn-edit-profile,
+            .btn-logout-profile {
+                font-size: 0.82rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    </style>
+
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width:340px;">
+            <div class="modal-content profile-modal-content">
+
+                {{-- Header --}}
+                <div class="profile-modal-header">
+                    <button type="button" class="btn-close btn-close-white float-end" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <div class="text-center mt-2">
+                        <div class="profile-avatar">
+                            {{ strtoupper(substr(session('user_name') ?? (session('name') ?? '?'), 0, 1)) }}
+                        </div>
+                        <h6 class="fw-bold text-white mb-0">{{ session('user_name', '-') }}</h6>
+                        <p class="mb-0" style="color:rgba(255,255,255,0.85); font-size:0.8rem;">
+                            {{ session('user_email', '-') }}
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Body --}}
+                <div class="modal-body p-0">
+                    <div class="profile-body">
+
+                        {{-- Info rows --}}
+                        <div class="profile-info-box">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span style="font-size:1rem;">👤</span>
+                                <div>
+                                    <p class="profile-info-label">Nama</p>
+                                    <p class="profile-info-value">{{ session('user_name', '-') }}</p>
+                                </div>
+                            </div>
+                            <hr class="profile-info-divider">
+                            <div class="d-flex align-items-center gap-2">
+                                <span style="font-size:1rem;">✉️</span>
+                                <div>
+                                    <p class="profile-info-label">Email</p>
+                                    <p class="profile-info-value">{{ session('user_email', '-') }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Edit Profile --}}
+                        <a href="#" class="btn-edit-profile">
+                            Edit Profile
+                        </a>
+
+                        {{-- Logout --}}
+                        <form action="#" method="GET" class="m-0">
+                            <button type="submit" class="btn-logout-profile">
+                                Logout
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

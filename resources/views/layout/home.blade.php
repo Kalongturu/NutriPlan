@@ -4,22 +4,18 @@
 
 @section('title', 'Homepage')
 @section('content')
-    <div class="col-10">
+    <div class="col-12 col-xl-10">
         <div class="row py-0">
-            <div class="col-4">
+            {{-- Top bar: greeting + search --}}
+            <div class="col-12 col-md-4 mb-2">
                 <h5 class="fw-bold">Selamat datang, {{ session('user_name') }}</h5>
-                {{-- Jumlah activity itu berdasarkan input pengguna --}}
                 <p class="tgl">You have 0 activity today</p>
                 <h4 class="mb-1 fw-500">Meal plan - Today</h4>
-                {{-- Menampilkann tanggal --}}
                 <p class="text-muted tgl">{{ date('l, d F Y') }}</p>
-
             </div>
 
-            <div class="col-8">
-                {{-- Search bar --}}
+            <div class="col-12 col-md-8 mb-2">
                 <div class="position-relative">
-                    <span id="input-group-sizing-sm"></span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         class="position-absolute lup">
                         <path
@@ -29,27 +25,63 @@
                     <input type="text" class="form-control" aria-label="search bar home"
                         aria-describedby="form di homepage" placeholder="Search by recipes and more">
                 </div>
-
             </div>
-            {{-- Container meal & drink --}}
-            <div class="col-5 pb-3">
-                {{-- Wadah untuk meals-list dan headernya --}}
+
+            {{-- Meals & Drinks column --}}
+            <div class="col-12 col-md-5 col-xl-5 pb-3">
                 <div class="wrapper-meal-home">
                     <div class="header-meals d-flex justify-content-between align-items-center mb-1">
                         <h5 class="m-0">Meals & Drinks</h5>
-                        {{-- Jumlah meal (bergantung pada wrapper-content-meal-home) dan water bergantung pada input user --}}
                         <p class="text-muted tgl m-0">1 Meals - 1.2L Water</p>
                     </div>
-                    {{-- Wadah untuk wrapper-content-meal-home --}}
                     <div class="meals-list gap-3">
-                        {{-- Template untuk konten di meal --}}
-                        {{-- Data gambar, type meal, name meal, category meal, dan nutrition meal diambil dari database --}}
-                        @include('components.meal_template')
+                        {{-- Timeline meals using meal_template --}}
+                        @include('components.meal_template', [
+                            'time' => '8:00',
+                            'meal_type' => 'Breakfast',
+                            'meal_name' => 'Avocado Toast & Poached Eggs',
+                            'meal_image' => 'meal1_home.png',
+                            'ktg1_label' => 'Quick Meal',
+                            'ktg1_class' => 'ktg-oren-home',
+                            'ktg2_label' => 'Balanced',
+                            'ktg2_class' => 'ktg-ijo-home',
+                            'kcal' => '420',
+                            'protein' => '22',
+                            'is_last' => false,
+                        ])
+                        @include('components.meal_template', [
+                            'time' => '12:30',
+                            'meal_type' => 'Lunch',
+                            'meal_name' => 'Grilled Chicken & Brown Rice',
+                            'meal_image' => 'meal1_home.png',
+                            'ktg1_label' => 'High Protein',
+                            'ktg1_class' => 'ktg-ijo-home',
+                            'ktg2_label' => 'Low Carb',
+                            'ktg2_class' => 'ktg-oren-home',
+                            'kcal' => '560',
+                            'protein' => '38',
+                            'is_last' => false,
+                        ])
+                        @include('components.meal_template', [
+                            'time' => '19:00',
+                            'meal_type' => 'Dinner',
+                            'meal_name' => 'Salmon & Asparagus',
+                            'meal_image' => 'meal1_home.png',
+                            'ktg1_label' => 'Keto',
+                            'ktg1_class' => 'ktg-ijo-home',
+                            'ktg2_label' => 'Quick Meal',
+                            'ktg2_class' => 'ktg-oren-home',
+                            'kcal' => '470',
+                            'protein' => '35',
+                            'is_last' => true,
+                        ])
                     </div>
-
                 </div>
             </div>
-            <div class="col-7 d-flex justify-content-evenly flex-wrap">
+
+            {{-- Reports + widgets column --}}
+            <div class="col-12 col-md-7 col-xl-7 d-flex justify-content-evenly flex-wrap">
+                {{-- Reports card --}}
                 <div class="wrapper-report-home">
                     <div class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
@@ -60,7 +92,6 @@
                             <path
                                 d="M22 4C22.552 4 23 4.448 23 5V7C23 7.552 22.552 8 22 8H18C17.448 8 17 7.552 17 7V5C17 4.448 17.448 4 18 4H22ZM18 3C16.895 3 16 3.895 16 5V7C16 8.105 16.895 9 18 9H22C23.105 9 24 8.105 24 7V5C24 3.895 23.105 3 22 3H18Z"
                                 fill="black" />
-
                             <g transform="translate(13,12)">
                                 <path
                                     d="M0 10C0 9.17157 0.671573 8.5 1.5 8.5C2.32843 8.5 3 9.17157 3 10V12C3 12.8284 2.32843 13.5 1.5 13.5C0.671573 13.5 0 12.8284 0 12V10Z"
@@ -77,6 +108,7 @@
                         <p class="tgl m-0">Goal this week</p>
                     </div>
                     <div class="d-flex flex-wrap">
+                        {{-- Water card --}}
                         <div class="card-6 d-flex p-0">
                             <div class="crd6-content px-1 py-2">
                                 <div class="p-0 d-flex">
@@ -101,8 +133,6 @@
                                         <p class="p-crd-home my-0">Daily Week</p>
                                     </div>
                                 </div>
-                                {{-- h6 ini diberi id penanda sebagai nilai dari air yang sudah diinput pengguna --}}
-                                {{-- Untuk setting lengkapnya ada di file js --}}
                                 <div class="water-container d-flex flex-column align-items-center justify-content-center">
                                     <h6 class="fw-bold m-0" id="water-value-report">0</h6>
                                     <p class="p-0 m-0 p-card-daily text-white" id="value-report-ml">ml</p>
@@ -129,10 +159,9 @@
                                     </div>
                                     <p class="p-crd-home text-muted p-0 m-0">/2000</p>
                                 </div>
-
                             </div>
                         </div>
-                        {{-- Konten weight --}}
+                        {{-- Weight card --}}
                         <div class="card-6 d-flex p-0">
                             <div class="crd6-content py-2 px-1">
                                 <div class="p-0 d-flex">
@@ -194,8 +223,9 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- BMI card --}}
                         <div class="card-6">
-                            <div class="crd6-content py-2 px-1 flex-column  gap-2 d-flex">
+                            <div class="crd6-content py-2 px-1 flex-column gap-2 d-flex">
                                 <div class="p-0 d-flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                                         viewBox="0 0 12 12" fill="none">
@@ -261,11 +291,11 @@
                                             </svg>
                                         </button>
                                     </div>
-
                                     <p class="p-crd-home fw-bold p-0 m-0" id="ket-berat">68 kg</p>
                                 </div>
                             </div>
                         </div>
+                        {{-- Calories card --}}
                         <div class="card-6">
                             <div class="crd6-content py-2 px-1">
                                 <div class="p-0 d-flex">
@@ -283,41 +313,32 @@
                                 <div class="d-flex justify-content-center align-items-center position-relative">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
                                         viewBox="0 0 96 96" fill="none" class="position-relative">
-                                        <!-- Background lingkaran -->
                                         <circle cx="48" cy="48" r="42" stroke="#E5E7EB" stroke-width="8"
                                             fill="none" />
-
-                                        <!-- Segmen 1 -->
                                         <circle id="seg1" cx="48" cy="48" r="42" stroke="#F97316"
                                             stroke-width="8" fill="none" stroke-dasharray="66 198"
                                             stroke-dashoffset="0" stroke-linecap="round" />
-
-                                        <!-- Segmen 2 -->
                                         <circle id="seg2" cx="48" cy="48" r="42" stroke="#F97316"
                                             stroke-width="8" fill="none" stroke-dasharray="66 198"
                                             stroke-dashoffset="-66" stroke-linecap="round" />
-
-                                        <!-- Segmen 3 -->
                                         <circle id="seg3" cx="48" cy="48" r="42" stroke="#F97316"
                                             stroke-width="8" fill="none" stroke-dasharray="66 198"
                                             stroke-dashoffset="-132" stroke-linecap="round" />
-
-                                        <!-- Segmen 4 -->
                                         <circle id="seg4" cx="48" cy="48" r="42" stroke="#F97316"
                                             stroke-width="8" fill="none" stroke-dasharray="66 198"
                                             stroke-dashoffset="-198" stroke-linecap="round" />
                                     </svg>
-
                                     <h6 id="current-kkal" class="fw-bold m-0">1450</h6>
                                     <p id="target-p-kkal" class="p-crd-home p-0 m-0 text-muted position-absolute"> kcal of
-                                        <span id="maks-kkal">2000</span>
-                                    </p>
+                                        <span id="maks-kkal">2000</span></p>
                                 </div>
                                 <p class="p-crd-home fw-bold p-0 m-0" id="ket-presentase">100%</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {{-- Shopping List --}}
                 <div class="wrapper-shop-home">
                     <div class="d-flex mb-0 align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -329,10 +350,11 @@
                         <h6 class="fw-bold my-0 mx-2">Shopping List</h6>
                     </div>
                     <div class="wrapper-shop-list-home">
-                        {{-- Untuk templating, id bisa menggunakan loop sebagai pembeda --}}
                         @include('components.shop_template')
                     </div>
                 </div>
+
+                {{-- Daily Intake --}}
                 <div class="wrapper-daily-home">
                     <div class="d-flex align-items-center mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -351,8 +373,9 @@
                     <div class="wrapper-daily-list-home">
                         @include('components.layout-daily')
                     </div>
-
                 </div>
+
+                {{-- Activity --}}
                 <div class="wrapper-daily-home">
                     <div class="d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -370,11 +393,158 @@
             </div>
         </div>
     </div>
-    <div class="col-2 pb-3">
+
+    {{-- Recommendations sidebar --}}
+    <div class="col-12 col-xl-2 pb-3">
         <div class="wrapper-home1 py-2 d-flex m-0">
-            {{-- Ini untuk rekomendasi resep --}}
-            {{-- Templating rekomendasi resep --}}
             @include('components.recipes_recomendation')
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const plusBtn = document.getElementById("plus");
+            const minusBtn = document.getElementById("minus");
+            const waterValue = document.getElementById("water-value-report");
+            const waterBar = document.querySelector(".water-bar");
+            let current = 0;
+            const goal = 2000;
+            const step = 200;
+
+            function updateWater() {
+                waterValue.textContent = current;
+                let percent = (current / goal) * 100;
+                if (percent > 100) percent = 100;
+                waterBar.style.height = percent + "%";
+                waterBar.style.background = percent >= 100 ? "#22c55e" : "#3b82f6";
+            }
+            plusBtn.addEventListener("click", () => {
+                if (current < goal) {
+                    current += step;
+                    updateWater();
+                }
+            });
+            minusBtn.addEventListener("click", () => {
+                if (current > 0) {
+                    current -= step;
+                    updateWater();
+                }
+            });
+            updateWater();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const upBtn = document.getElementById("up-btn");
+            const downBtn = document.getElementById("down-btn");
+            const currentText = document.getElementById("current-weight");
+            const diffText = document.getElementById("value-weight-kg");
+            let current = 68.0;
+            const target = 65.0;
+            const min = 50,
+                max = 80,
+                step = 0.5;
+
+            function updateGauge() {
+                currentText.textContent = current.toFixed(1);
+                const diff = current - target;
+                diffText.textContent = `${diff >= 0 ? "+" : ""}${diff.toFixed(1)}kg`;
+                const needle = document.querySelector(".svg-weight path[stroke='#374151']");
+                let angle = ((current - min) / (max - min)) * 120 - 60;
+                angle = Math.max(-60, Math.min(60, angle));
+                needle.setAttribute("transform", `rotate(${angle},64.5,69.875)`);
+            }
+            upBtn.addEventListener("click", () => {
+                if (current < max) {
+                    current += step;
+                    updateGauge();
+                }
+            });
+            downBtn.addEventListener("click", () => {
+                if (current > min) {
+                    current -= step;
+                    updateGauge();
+                }
+            });
+            updateGauge();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const height = 170;
+            let weight = 68;
+            const bmiText = document.getElementById("current-bmi");
+            const ketElement = document.getElementById("ket-bmi");
+            const weightText = document.getElementById("ket-berat");
+            const plusBtn = document.getElementById("plus-weight");
+            const minusBtn = document.getElementById("minus-weight");
+            const greenPaths = document.querySelectorAll(".svg-weight path[stroke='#34D399']");
+            const needle = greenPaths[greenPaths.length - 1];
+
+            function mapRange(value, inMin, inMax, outMin, outMax) {
+                return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+            }
+
+            function calculateBMI(w, h) {
+                const hm = h / 100;
+                return w / (hm * hm);
+            }
+
+            function updateBMI() {
+                const bmi = calculateBMI(weight, height);
+                bmiText.textContent = bmi.toFixed(1);
+                weightText.textContent = `${weight} kg`;
+                let status, color, angle;
+                if (bmi < 18.5) {
+                    status = "Underweight";
+                    color = "#60A5FA";
+                    angle = mapRange(bmi, 10, 18.5, -90, -25);
+                } else if (bmi < 25) {
+                    status = "Normal";
+                    color = "#34D399";
+                    angle = mapRange(bmi, 18.5, 25, -25, 10);
+                } else if (bmi < 30) {
+                    status = "Overweight";
+                    color = "#FBBF24";
+                    angle = mapRange(bmi, 25, 30, 10, 45);
+                } else {
+                    status = "Obese";
+                    color = "#F87171";
+                    angle = mapRange(bmi, 30, 40, 45, 90);
+                }
+                ketElement.textContent = status;
+                ketElement.style.color = color;
+                needle.setAttribute("transform", `rotate(${angle},64.5,71.875)`);
+            }
+            plusBtn.onclick = () => {
+                weight++;
+                updateBMI();
+            };
+            minusBtn.onclick = () => {
+                if (weight > 1) weight--;
+                updateBMI();
+            };
+            updateBMI();
+        });
+
+        function updateProgressFromDOM() {
+            const current = parseInt(document.getElementById("current-kkal").textContent);
+            const target = parseInt(document.getElementById("maks-kkal").textContent);
+            const percent = Math.min((current / target) * 100, 100);
+            document.getElementById("ket-presentase").textContent = `${percent.toFixed(0)}%`;
+            const segments = [seg1, seg2, seg3, seg4];
+            segments.forEach((seg, i) => {
+                let threshold = (i + 1) * 25;
+                if (percent >= threshold) {
+                    seg.setAttribute("stroke-dasharray", "66 198");
+                    seg.style.stroke = "#F97316";
+                } else if (percent > i * 25) {
+                    let fillPercent = (percent - i * 25) / 25;
+                    seg.setAttribute("stroke-dasharray", `${66 * fillPercent} 198`);
+                    seg.style.stroke = "#F97316";
+                } else {
+                    seg.setAttribute("stroke-dasharray", "0 198");
+                    seg.style.stroke = "transparent";
+                }
+            });
+        }
+    </script>
 @endsection
